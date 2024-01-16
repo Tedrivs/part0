@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: Fill form and click save 
+    Note right of browser: New note is added to notes list locally and list is redrawn
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: {"message":"note created"} Code: 201 Created
+    deactivate server
